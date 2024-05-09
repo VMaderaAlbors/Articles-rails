@@ -10,6 +10,9 @@ WORKDIR /usr/src/app
 ENV RAILS_ENV=production
 ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
+COPY Gemfile Gemfile.lock ./
+
+
 RUN gem install bundler:2.2.3
 RUN bundle install
 RUN rake db:migrate
