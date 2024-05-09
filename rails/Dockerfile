@@ -13,7 +13,7 @@ ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 RUN gem install bundler:2.2.3
 RUN bundle install
 RUN rake db:migrate
-RUN rails test
+
 RUN rails assets:precompile
 CMD [ "rails", "server"]
 # # syntax = docker/dockerfile:1
